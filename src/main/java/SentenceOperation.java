@@ -59,12 +59,33 @@ public class SentenceOperation {
         }
     }
 
+    public static void useCase3(){
+        useCase2(true);
+        System.out.println("Before Removal \n");
+        for(String word:indexOfWord.hashMap.keySet()){
+            LinkedList<Integer>list=indexOfWord.getValue(word);
+            System.out.print(word+" : ");
+            System.out.println(list);
+        }
+
+        indexOfWord.remove("avoidable");
+
+        System.out.println("After Removal \n");
+
+        for(String word:indexOfWord.hashMap.keySet()){
+            LinkedList<Integer>list=indexOfWord.getValue(word);
+            System.out.print(word+" : ");
+            System.out.println(list);
+        }
+
+    }
+
 
     public static void main(String[] args) {
         frequency =new HashTable<>();
         indexOfWord=new HashTable<>();
         useCase1();
         useCase2(false);
-        
+        useCase3();
     }
 }
